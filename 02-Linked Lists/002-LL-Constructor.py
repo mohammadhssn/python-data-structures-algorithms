@@ -1,11 +1,14 @@
+from typing import Any
+
+
 class Node:
-    def __init__(self, value) -> None:
+    def __init__(self, value: Any) -> None:
         self.value = value
         self.next = None
 
 
 class LinkedList:
-    def __init__(self, value) -> None:
+    def __init__(self, value: Any) -> None:
         new_node = Node(value)
         self.head = new_node
         self.tail = new_node
