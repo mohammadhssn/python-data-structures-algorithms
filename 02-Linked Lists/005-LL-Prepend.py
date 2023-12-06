@@ -31,7 +31,7 @@ class LinkedList:
         self.length += 1
         return True
 
-    def pop(self) -> Node | None:
+    def pop(self) -> Any | None:
         if self.length == 0:
             return None
 
@@ -46,7 +46,7 @@ class LinkedList:
         if self.length == 0:
             self.head = None
             self.tail = None
-        return temp
+        return temp.value
     
     def prepend(self, value: Any) -> bool:
         new_node = Node(value)
