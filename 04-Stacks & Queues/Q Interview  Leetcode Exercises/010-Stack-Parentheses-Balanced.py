@@ -45,22 +45,23 @@ class Stack:
             return None
         return self.stack_list.pop()
     
-    def is_balanced_parentheses(self, parentheses: str) -> bool:
-        for p in parentheses:
-            if p == "(":
-                self.push(p)
-            elif p == ")":
-                if self.is_empty() or self.pop() != "(":
-                    return False
-        return self.is_empty()
-    
+
+def is_balanced_parentheses(parentheses: str) -> bool:
+    stack = Stack()
+    for p in parentheses:
+        if p == "(":
+            stack.push(p)
+        elif p == ")":
+            if stack.is_empty() or stack.pop() != "(":
+                return False
+    return stack.is_empty()
+
 
 balanced_parentheses = '((()))'
 unbalanced_parentheses = '((())))'
 
-my_stack = Stack()
-print(my_stack.is_balanced_parentheses(balanced_parentheses))
-print(my_stack.is_balanced_parentheses(unbalanced_parentheses))
+print(is_balanced_parentheses(balanced_parentheses))
+print(is_balanced_parentheses(unbalanced_parentheses))
 
 
 """
