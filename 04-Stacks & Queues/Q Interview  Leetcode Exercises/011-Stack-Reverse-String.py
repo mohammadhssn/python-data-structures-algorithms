@@ -40,22 +40,23 @@ class Stack:
             return None
         return self.stack_list.pop()
     
-    def reverse_string(self, string: str) -> str:
-        reversed_string = ""
 
-        for char in string:
-            self.push(char)
+def reverse_string(string: str) -> str:
+    stack = Stack()
+    reversed_string = ""
+
+    for char in string:
+        stack.push(char)
         
-        while not self.is_empty():
-            reversed_string += self.pop()
+    while not stack.is_empty():
+        reversed_string += stack.pop()
         
-        return reversed_string
+    return reversed_string
     
 
 my_string = 'hello'
 
-my_stack = Stack()
-print(my_stack.reverse_string(my_string))
+print(reverse_string(my_string))
 
 
 """
