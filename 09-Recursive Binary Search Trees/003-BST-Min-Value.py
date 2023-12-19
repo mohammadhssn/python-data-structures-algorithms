@@ -40,7 +40,7 @@ class BinarySearchTree:
                 return True
         return False
     
-    def min_value(self, current_node: Node) -> Node:
+    def min_value(self, current_node: Node) -> int:
         while current_node.left is not None:
             current_node = current_node.left
         return current_node.value
@@ -66,5 +66,5 @@ print(my_tree.min_value(my_tree.root.right))
     ----------------
 	18
 	52
-    
+
 """
