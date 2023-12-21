@@ -9,7 +9,7 @@ class BinarySearchTree:
     def __init__(self) -> None:
         self.root = None
 
-    def insert(self, value: int) -> None:
+    def insert(self, value: int) -> bool:
         new_node = Node(value)
         if self.root is None:
             self.root = new_node
